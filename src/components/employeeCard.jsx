@@ -3,48 +3,62 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import PetsIcon from '@mui/icons-material/Pets';
-import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import PetsIcon from '@mui/icons-material/Pets';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import { ListItemAvatar } from '@mui/material';
 
 
-
-export default function MediaCard() {
+export default function MediaCard({ data }) {
+  /* console.log(data); */
   return (
-    <Card sx={{ maxWidth: 345, padding: 2 }}>
-      <Box sx={{ paddingTop: 2}}>
-        <CardMedia
-        sx={{ height: 200, width: 300, backgroundSize: "contain", margin: "auto"}}
-        image="/employee-dashboard-react-app-m02/profile1.png"
-        title="profile pic"
+    <>
+    {
+      data.map((item, index) => (
+<Card sx={{ maxWidth: 345, padding: 2, marginTop:2 }}>
+      <Box >
+      <CardMedia
+        sx={{
+           height: 240, width: 300, backgroundSize: "contain",margin: "auto"}}
+        image={`/employee-dashboard-react-app-m02/${item.image}`}
+        title="profile image"
       />
-            </Box>
-
+      </Box>
       <PetsIcon />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          John Smith
+       {item.firstName} {item.lastName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Department: UX/UI Design          
+         {item.position}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Position: UI Design
-        </Typography >
-        <Stack direction="row" spacing={1} sx= {{ marginTop: 2, justifyContent: "center"}}>
-      <Chip label="Sketch" />
-      <Chip label="Figma" />
-      <Chip label="Adobe XD" />
+        <Stack direction="row"
+        flexWrap="wrap"
+        spacing={1} sx={{marginTop: 2, justifyContent: "center" }}>
+      {item.skills.map((skill, skillIndex) => (
+        <Chip sx={{marginTop: 2 }}key={skillIndex} label={skill} />
+
+      ))}
     </Stack>
+
+
       </CardContent>
-      <Stack direction="row" spacing={1} sx= {{justifyContent: "center"}}>
-      <Chip label="Active" variant="outlined" />
-      <Chip label="Hours: 20" variant="outlined" />
+      <Stack direction="row" spacing={1}  sx={{marginTop: 2, justifyContent: "center" }}>
+      <Chip label={item.onLeave? "Inacive" : "Active"}
+      variant={item.onleave ? "outlined" : ""} />
+      <Chip 
+      label={`Hours: ${item.hoursLoggedThisWeek}`}
+       variant="outlined"
+        />
     </Stack>
+
     </Card>
+
+    ))}
+</>
+    
   );
-}
+} 

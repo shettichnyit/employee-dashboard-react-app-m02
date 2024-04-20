@@ -1,5 +1,5 @@
 const data = [{
-  "image": "sunflower.jpeg",
+  "image": "profile1.png",
   "id": "E1002",
   "firstName": "John",
   "lastName": "Smith",
@@ -13,7 +13,7 @@ const data = [{
 },
 
 {
-  "image": "sunflower.jpeg",
+  "image": "profile2.png",
   "id": "E1003",
   "firstName": "Lisa",
   "lastName": "White",
@@ -27,7 +27,7 @@ const data = [{
 },
 
 {
-  "image": "sunflower.jpeg",
+  "image": "profile3.png",
   "id": "E1004",
   "firstName": "Mark",
   "lastName": "Brown",
@@ -41,7 +41,7 @@ const data = [{
 },
 
 {
-  "image": "sunflower.jpeg",
+  "image": "profile4.png",
   "id": "E1005",
   "firstName": "Emily",
   "lastName": "Green",
@@ -55,7 +55,7 @@ const data = [{
 },
 
 {
-  "image": "sunflower.jpeg",
+  "image": "profile5.png",
   "id": "E1006",
   "firstName": "Alex",
   "lastName": "Johnson",
