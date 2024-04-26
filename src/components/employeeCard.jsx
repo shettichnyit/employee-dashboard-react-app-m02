@@ -48,7 +48,7 @@ export default function MediaCard({ data }) {
       </CardContent>
       <Stack direction="row" spacing={1}  sx={{marginTop: 2, justifyContent: "center" }}>
       <Chip label={item.onLeave? "Inacive" : "Active"}
-      variant={item.onleave ? "outlined" : ""} />
+      variant={item.onleave ? "outlined" : "On Leave"} />
       <Chip 
       label={`Hours: ${item.hoursLoggedThisWeek}`}
        variant="outlined"
